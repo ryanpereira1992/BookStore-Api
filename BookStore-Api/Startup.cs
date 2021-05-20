@@ -74,6 +74,7 @@ namespace BookStore_Api
 
             // DTO / IRepository / Services
             services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
 
 
             // Controllers needed for API
