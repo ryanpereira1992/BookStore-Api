@@ -79,5 +79,12 @@
             <param name="id"></param>
             <returns> No Content </returns>
         </member>
+        <member name="M:BookStore_Api.Controllers.UserController.Login(BookStore_Api.DTOs.UserDTO)">
+            <summary>
+            User Login Endpoint
+            </summary>
+            <param name="userDTO"></param>
+            <returns>User Object</returns>
+        </member>
     </members>
 </doc>

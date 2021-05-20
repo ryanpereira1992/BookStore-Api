@@ -2,6 +2,7 @@
 using BookStore_Api.Contracts;
 using BookStore_Api.Data;
 using BookStore_Api.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -100,6 +101,7 @@ namespace BookStore_Api.Controllers
         /// <param name="authorDTO"></param>
         /// <returns> Author Object </returns>
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -144,6 +146,7 @@ namespace BookStore_Api.Controllers
         /// <param name="authorDTO"></param>
         /// <returns> Author Object </returns>
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator, Customer")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
